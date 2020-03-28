@@ -106,12 +106,14 @@ function displayBooks(arrayofBooks){
 //Should the search be case-sensitive? How will the search work? Will it only work from the beginning of a field, or from 
 //anywhere within? some hints:
 function searchbooks(query, arrayofBooks){
+	var result ="";
 
-	for(var i = 0; i < arrayofBooks ; i++){
+	for(var i = 0; i < arrayofBooks.length ; i++){
 
 		for( var key in arrayofBooks[i]){
 
-			var newarr = arrayofBooks[i][key].split('');
+			var newone = arrayofBooks[i][key];
+			var newarr = newone.toString().split(' ');
 			for( var j = 0; j < newarr.length ; j++){
 
 		     	if( newarr[j] === query){
@@ -134,7 +136,22 @@ function searchbooks(query, arrayofBooks){
 //  A good starting point would be to write a function isMatch that accepts two arguments – the query and a single book –
 //  and returns true if the book is a match, and false otherwise.
 
-// 8.Write a function removeBook that, given a book's title and an array of books, returns a new array of books that does not contain the book with the provided title.
+// 8.Write a function removeBook that, given a book's title and an array of books, returns a new array of books that does
+// not contain the book with the provided title.
+function removeBook(title, arrayofBooks){
+   	var arr1 =[];
+   	for(var i = 0; i < arrayofBooks.length ; i++){
+   		var newone = arrayofBook[i].Title.split(' ');
+   		var word = arrayofBooks[i];
+   		for(var j = 0; j < newone.length ; j++){
+   			if(title !== newone[j] && i !== j){
+   			arr1.push(arrayofBooks[i]);
+   	   	}
+   
+   	}
+   	return arr1;
+}
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~ More Practice ~~~~~~~~~~~~~~~~~~~~~~
 
