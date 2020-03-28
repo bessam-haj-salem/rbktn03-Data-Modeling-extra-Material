@@ -105,7 +105,20 @@ function displayBooks(arrayofBooks){
 // be searched? Will you search multiple fields simultaneously (it might be best to start with one field, e.g.title)? 
 //Should the search be case-sensitive? How will the search work? Will it only work from the beginning of a field, or from 
 //anywhere within? some hints:
+function searchbooks(title, arrayofBooks){
 
+	for(var i = 0; i < arrayofBooks ; i++){
+		for( var j = title.length ; j > 0; j--)
+	if( arrayofBooks[i].Title === title){
+		result = true;
+		arrayofBooks[i].Title.substr(0, j);
+		
+
+	}
+	}
+	return result;
+	
+}
 //  'Harry Potter'.toLowerCase();    // => 'harry potter'
 //  'Harry Potter'.substr(0, 5);     // => 'Harry'
 //   var query = 'Harry';
