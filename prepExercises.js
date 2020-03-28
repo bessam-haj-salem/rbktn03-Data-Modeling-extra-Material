@@ -26,13 +26,13 @@
  	Description : "best seller" ,
  	Genre : "technics"
  };
- var book1 ={
+ var book2 ={
  	Title : "Harry Potter and the Sorcerer's Stone" ,
  	Author : "J.K. Rowling",
  	Description : "adventure" ,
  	Genre : "best selller"
  };
- var book1 = {
+ var book3 = {
  	Title : "Romeo and Juliet"  ,
  	Author : "William Shakespeare",
  	Description : "romantic",
@@ -74,9 +74,25 @@
  }
 
 // 5.Create an array called books that holds all of the books that you created above.
+ var arrayBooks = [book1, book2, book3];
 
-// 6.Your function displayBook can be used to display a single book as a string. Now, write a function displayBooks that, given an array of books, returns a single string consisting of all of the books. Use the function displayBook to format all of the books. Each book should be numbered and separated with a newline (we also call this a line break) character so that each book is shown on a separate line in the console. The newline character is specified with a special escaped character in a string:
+// 6.Your function displayBook can be used to display a single book as a string. Now, write a function displayBooks that,
+// given an array of books, returns a single string consisting of all of the books. Use the function displayBook to format 
+//all of the books. Each book should be numbered and separated with a newline (we also call this a line break) character so 
+//that each book is shown on a separate line in the console. The newline character is specified with a special escaped character in a string:
+function displayBooks(arrayofBooks){
+	var result = "";
+	var i = 0;
+	var j = 1;
+	while(i < arrayofBooks.length && j < arrayofBooks.length){
 
+		result =  result + j + '. ' +  displayBook(arrayBooks[i]) + '\n';
+		i++;
+		j++;
+	}
+	
+	return  result ;
+}
 //  // Enter the below line into a console 'Hello /n World!'; // the 'backslash n' character is a newline
 //  function displayBooks(books) {
 //        // ...
@@ -84,7 +100,11 @@
 //  displayBooks(books);
 //  // => '1. Harry Potter and the Sorcerer's Stone... /n 2. Snow Crash, ...'
 
-// 7.Write a function searchBooks that, given a query and an array of books, searches the array of books for 'matching' books. You will decide what way you want to write your search algorithm. Here are some things to think about: What fields will be searched? Will you search multiple fields simultaneously (it might be best to start with one field, e.g.title)? Should the search be case-sensitive? How will the search work? Will it only work from the beginning of a field, or from anywhere within? some hints:
+// 7.Write a function searchBooks that, given a query and an array of books, searches the array of books for 'matching' books.
+// You will decide what way you want to write your search algorithm. Here are some things to think about: What fields will
+// be searched? Will you search multiple fields simultaneously (it might be best to start with one field, e.g.title)? 
+//Should the search be case-sensitive? How will the search work? Will it only work from the beginning of a field, or from 
+//anywhere within? some hints:
 
 //  'Harry Potter'.toLowerCase();    // => 'harry potter'
 //  'Harry Potter'.substr(0, 5);     // => 'Harry'
