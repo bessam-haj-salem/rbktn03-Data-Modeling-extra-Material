@@ -17,8 +17,27 @@
 //  Genre
 //  Number of Pages
 //  Description
+//  Price
 
 // 2.In terms of the properties of books that you thought of, represent the following books as data:
+ var book1 = {
+ 	Title : "Structure and Interpretation of Computer Programs" ,
+ 	Author : ["Gerald Jay Sussman", "Hal Abelson"] ,
+ 	Description : "best seller" ,
+ 	Genre : "technics"
+ };
+ var book1 ={
+ 	Title : "Harry Potter and the Sorcerer's Stone" ,
+ 	Author : "J.K. Rowling",
+ 	Description : "adventure" ,
+ 	Genre : "best selller"
+ };
+ var book1 = {
+ 	Title : "Romeo and Juliet"  ,
+ 	Author : "William Shakespeare",
+ 	Description : "romantic",
+ 	Genre : "classic"
+ };
 
 //  Harry Potter and the Sorcerer's Stone (J.K. Rowling)
 //  Romeo and Juliet (William Shakespeare)
@@ -26,9 +45,21 @@
 //  NOTE: Did you account for the possibility of two authors? If not, update your model to handle multiple authors.
 //  Three other books (see this list for ideas)
 
-// 3.You may have been rewriting the same type of object over and over. We need to stay DRY (Do Not Repeat). Write a function makeBook that takes as arguments different attributes of a book and returns an object representing that book that has the proper structure (we call this a factory function).
+// 3.You may have been rewriting the same type of object over and over. We need to stay DRY (Do Not Repeat). Write a 
+//function makeBook that takes as arguments different attributes of a book and returns an object representing that book 
+//that has the proper structure (we call this a factory function).
+ function makeBook(title, author, description, genre ){
+ 	return {
+ 		Title : title,
+ 		Author : author,
+ 		Description : description,
+ 		Genre : genre
+ 	};
+ }
 
-// 4.Look at one of your book objects in the console. This is the object inspector. The object inspector is nice to have, but it will be easier to have a function to display the more important information easily. Write a function called displayBook that takes a book as an argument, and returns the important information in a more readable way, for example:
+// 4.Look at one of your book objects in the console. This is the object inspector. The object inspector is nice to have, 
+//but it will be easier to have a function to display the more important information easily. Write a function called 
+//displayBook that takes a book as an argument, and returns the important information in a more readable way, for example:
 
 // var sorcerersStone = { /* ... */ }
 //  function displayBook(book) {
@@ -36,7 +67,11 @@
 //  }
 //  displayBook(sorcerersStone);
 //  // => 'Harry Potter and the Sorcerer's Stone, by J.K. Rowling -- fantasy, $24.99'
-// The output string above is only an example. What information is most important to you? How can you make that information easier to read for people?
+// The output string above is only an example. What information is most important to you? How can you make that information
+// easier to read for people?
+ function displayBook(book){
+ 	return book.Title + ', ' + book.Author + ' -- ' + book.Genre + ', ' + book.Description;
+ }
 
 // 5.Create an array called books that holds all of the books that you created above.
 
